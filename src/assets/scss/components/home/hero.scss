@@ -7,7 +7,7 @@
   }
 
   @include mobile {
-min-height: calc(100dvh - 128px);
+    min-height: calc(100dvh - 109px);
   }
 
   &::before {
@@ -74,7 +74,9 @@ min-height: calc(100dvh - 128px);
   }
 
   &__left {
-    max-width: 594px;
+    @include mini-desktop {
+      max-width: 617px;
+    }
   }
 
   &__title {
@@ -107,6 +109,12 @@ min-height: calc(100dvh - 128px);
 
   &__subtitle {
     margin-bottom: 69px;
+
+    & br {
+      @include mini-desktop {
+        display: none;
+      }
+    }
   }
 
   &__form {
@@ -118,8 +126,8 @@ min-height: calc(100dvh - 128px);
     }
 
     @include small-mobile {
-      flex-direction: column;
       gap: 20px;
+      flex-direction: column;
     }
   }
 
@@ -140,7 +148,6 @@ min-height: calc(100dvh - 128px);
     @include mobile {
       min-width: 100px;
       max-width: 180px;
-      
     }
   }
 
@@ -238,10 +245,11 @@ min-height: calc(100dvh - 128px);
     }
 
     &-body {
-      &-th {
+      &-td {
         font-weight: 700;
         font-size: 20px;
         line-height: 130%;
+        white-space: nowrap;
         color: #fff;
 
         &:nth-child(1) {
